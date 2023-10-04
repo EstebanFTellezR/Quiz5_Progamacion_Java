@@ -1,0 +1,39 @@
+import java.util.LinkedList;
+
+public class Biblioteca {
+
+    /**
+    * Se crea el atributo publico librosDisponibles.
+    */
+    public LinkedList<Libro> librosDisponibles = new LinkedList<Libro>();
+
+    /**
+    * Se crean los metodos que hace que funcione el registrar, buscar y mostrar los datos.
+    * Complejidad temporal : 0(1) Tiempo constante.
+    */
+    public void registrarLibro(Libro libro){
+        librosDisponibles.add(libro);
+    }
+
+    /**
+    * El metodo buscarLibro recorre la lista "librosDisponibles" con un for y guarda en la variable "libroBuscado"
+    * los caracteres de la lista en la posicion (i) para despues compararla con el libro a buscar.
+    * Complejidad temporal : 0(N) Tiempo lineal.
+    */
+    
+    public Libro buscarLibro(String titulo){
+        
+        for (int i=0; i<librosDisponibles.size();i++){
+            Libro libroBuscado = librosDisponibles.get(i);
+            
+            if (libroBuscado.getTitulo().equals(titulo)){
+                return libroBuscado;
+            }
+        }
+        return null;
+    }
+
+    public LinkedList<Libro> mostrarLibrosDisponibles() {
+        return librosDisponibles;
+    }
+}
